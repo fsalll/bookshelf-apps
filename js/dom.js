@@ -13,7 +13,7 @@ function addBook() {
 
     const book = makeBook(inputBookTitle, inputBookAuthor, inputBookYear, inputBookIsComplete);
     const bookObject = composebookObject(inputBookTitle, inputBookAuthor, inputBookYear, inputBookIsComplete);
-  
+
     book[BOOK_ITEMID] = bookObject.id;
     books.push(bookObject);
 
@@ -124,7 +124,7 @@ function addBookToCompleted(bookElement){
 function refreshDataFrombooks() {
     const listUncompleted = document.getElementById(INCOMPLETE_BOOKSHELFLIST);
     const listCompleted = document.getElementById(COMPLETE_BOOK_SHELFLIST);
-  
+
     for(book of books){
         const newbook = makeBook(book.title, book.author, book.year, book.isCompleted);
         newbook[BOOK_ITEMID] = book.id;
@@ -140,7 +140,7 @@ function refreshDataFrombooks() {
 function searchBook() {
     const inputSearch = document.getElementById("searchBookTitle").value;
     const moveBook = document.querySelectorAll(".move")
-  
+
     for(move of moveBook){
         if (inputSearch !== move.innerText){
             console.log(move.innerText)
